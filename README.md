@@ -140,7 +140,6 @@ I was interested in looking at outage severity by state, so I created the pivot 
 | Kansas               |          175     |          7296.5   |                2.77462 |
 
 The top 10 states with the most severe outages on average are listed above.
-These states seem to have more severe outages than other states.\
 \
 Though my main focus was not on causes of outages, I was still curious about this part of the data and
 decided to examine the causes of outages over the years:
