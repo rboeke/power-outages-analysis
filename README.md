@@ -1,11 +1,12 @@
-# Examining Power Outage Factors: When Will the Lights Go Out?
-## Rachel Boeke | boeker@umich.edu
+# Examining Power Outage Factors: When Will Your Next Power Outage Be?
 
-Created for EECS 398 at the University of Michigan.
+Created by Rachel Boeke (boeker@umich.edu) for EECS 398 at the University of Michigan.
 
 ## Introduction
 **When will your next power outage be?** \
+\
 **How can we predict (or even prevent) a power outage and its impact before it happens?**\
+\
 **Examining some of the factors that play a role is one place to start...**\
 \
 Using [power outage data provided by researchers at Purdue University](https://www.sciencedirect.com/science/article/pii/S2352340918307182#bib6), I wanted to answer the question:
@@ -21,27 +22,33 @@ Using [power outage data provided by researchers at Purdue University](https://w
 * U.S._STATE: The U.S. state where the outage occurred
 * POSTAL.CODE: The two-letter postal abbreviation for the U.S. state where the outage occurred
 * NERC.REGION: The North American Electric Reliability Corporation (NERC) regions involved in the outage event
+\
 2. Time:
 * OUTAGE.START.DATE: This variable indicates the day of the year when the outage event started (as reported by the corresponding Utility in the region)
 * OUTAGE.START.TIME: This variable indicates the time of the day when the outage event started (as reported by the corresponding Utility in the region)
+\
 3. Climate:
 * CLIMATE.REGION: U.S. Climate regions as specified by National Centers for Environmental Information (nine climatically consistent regions in continental U.S.A.)
 * ANOMALY.LEVEL: This represents the oceanic El Niño/La Niña (ONI) index referring to the cold and warm episodes by season. It is estimated as a 3-month running mean of ERSST.v4 SST anomalies in the Niño 3.4 region (5°N to 5°S, 120–170°W)
 * CLIMATE.CATEGORY: This represents the climate episodes corresponding to the years. The categories—“Warm”, “Cold” or “Normal” episodes of the climate are based on a threshold of ± 0.5 °C for the Oceanic Niño Index (ONI)
+\
 4. Land-use characteristics
 * PCT_LAND: Percentage of land area in the U.S. state as compared to the overall land area in the continental U.S. (in %)
 * AREAPCT_URBAN: Percentage of the land area of the U.S. state represented by the land area of the urban areas (in %)
 * PCT_WATER_TOT: Percentage of water area in the U.S. state as compared to the overall water area in the continental U.S. (in %)
-7. Population:
+\
+5. Population:
 * POPULATION: Population in the U.S. state in a year
 * TOTAL.CUSTOMERS: Annual number of total customers served in the U.S. state
 
 ### Relevant columns that characterize the severity of an outage include:
 1. OUTAGE.DURATION: Duration of outage events (in minutes)
+\
 2. DEMAND.LOSS.MW: Amount of peak demand lost during an outage event (in Megawatt) [but in many cases, total demand is reported]
+\
 3. CUSTOMERS.AFFECTED: Number of customers affected by the power outage event
 
-Additional fields and field descriptions are provided [here](https://www.sciencedirect.com/science/article/pii/S2352340918307182#bib6)
+Additional fields and field descriptions are provided [here](https://www.sciencedirect.com/science/article/pii/S2352340918307182#bib6).
 
 ## Data Cleaning and Exploratory Data Analysis
 
@@ -81,7 +88,7 @@ I looked at the distribution of relevant variables. To start, I examined the sev
 <iframe
   src="plots/distr_severity_measures.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
@@ -99,12 +106,12 @@ Outages seem to most commonly occur in California, Texas, Washington, Michigan, 
 
 ### Bivariate Analysis
 
-I moved on to bivariate analysis next. First, I examined the distribution of climate anomaly levels in each region during reported outags:
+I moved on to bivariate analysis next. First, I examined the distribution of climate anomaly levels in each region during reported outages:
 
 <iframe
   src="plots/distr_anomaly_level_by_region.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
@@ -137,14 +144,14 @@ I was interested in looking at outage severity by state, so I created the pivot 
 | Kansas               |          175     |          7296.5   |                2.77462 |
 
 The top 10 states with the most severe outages on average are listed above.
-D.C., West Virginia, and Hawaii seem to have more severe outages than other states.\
+These states seem to have more severe outages than other states.\
 \
 Though my main focus was not on causes of outages, I was still curious about this part of the data and
 decided to examine the causes of outages over the years:
 <iframe
   src="plots/causes_over_time.html"
   width="800"
-  height="600"
+  height="400"
   frameborder="0"
 ></iframe>
 
