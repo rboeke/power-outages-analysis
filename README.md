@@ -120,7 +120,7 @@ Second, I looked at mean climate anomaly levels across states during outages:
   height="600"
   frameborder="0"
 ></iframe>
-Mean anomaly level appears to vary more across states than across regions - when predicting possibility of an outage in a given state, it may be better to look at anomaly levels at the state level rather than the regional level.
+Mean anomaly level appears to vary more across states than across regions - when predicting possibility of an outage, it may be better to look at anomaly levels at the state level rather than the regional level.
 
 ### Interesting Aggregates
 
