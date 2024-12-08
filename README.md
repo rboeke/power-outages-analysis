@@ -98,7 +98,7 @@ Next, I looked at outages by state:
   frameborder="0"
 ></iframe>
 
-Outages seem to most commonly occur in California, Texas, Washington, Michigan, New York, Maryland, Pennsylvania, Illinois, Florida, and Ohio. Living in one of these states may indicate a higher chance of experiencing an outage.
+Outages seem to most commonly occur in California, Texas, Washington, Michigan, New York, Maryland, Pennsylvania, Illinois, Florida, and Ohio.
 
 ### Bivariate Analysis
 
