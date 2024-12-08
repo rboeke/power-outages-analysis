@@ -191,10 +191,51 @@ A summary of missing values across all columns of the dataset is below:
 | CAUSE.CATEGORY     | 0.0 %                  |
 
 ## Framing a Prediction Problem
+I decided to build a model that predicts the severity of an outage in terms of demand loss (MW).
+I chose this metric because demand loss captures both customers affected and outage duration.
+This is a regression problem because DEMAND.LOSS.MW is a continuous, numeric variable.
 
+At the time of prediction, some factors available might be:
+* U.S._STATE
+* POPULATION
+* ANOMALY.LEVEL
+* PCT_LAND
+* AREAPCT_URBAN
+* PCT_WATER_TOT
+
+These are all known characteristics of a state or region that can be used to predict outage severity in the future.
+
+I used mean squared error (MSE) to evaluate the model, because MSE is a commonly used metric for regression models.
 
 ## Baseline Model
+Anomaly level, percent urban area, percent water total, percent land, and U.S. state seemed to be possible factors having some relationship with demand loss.
+I started by using these variables (ANOMALY.LEVEL, AREAPCT_URBAN, PCT_WATER_TOT, PCT_LAND, and U.S._STATE) as features.
 
+ANOMALY.LEVEL, AREAPCT_URBAN, PCT_WATER_TOT, and PCT_LAND are all quantitative features. U.S._STATE is a nominal feature and required One Hot Encoding.
+
+The initial model I used was sklearn's basic LinearRegression model.
+
+The baseline model's MSE was 884,973. I also evaluated the model by looking at the difference between actual and predicted DEMAND.LOSS.MW:
+
+<iframe
+  src="plots/diff.html"
+  width="800"
+  height="400"
+  frameborder="0"
+></iframe>
+
+|       |   Difference Between Actual and Predicted Demand Loss (MW) |
+|:------|-----------------------------------------------------------:|
+| count |                                                     171    |
+| mean  |                                                       8.48 |
+| std   |                                                      13.23 |
+| min   |                                                       0.04 |
+| 25%   |                                                       2.2  |
+| 50%   |                                                       4.95 |
+| 75%   |                                                       9.8  |
+| max   |                                                     129.91 |
+
+It appears most of the predicted data points fall within ~10MW of the actual demand loss, with 75% falling within 9.8MW. In terms of actual power, 10MW is a lot - this is not a great model
 
 ## Final Model
 
