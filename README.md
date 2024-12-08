@@ -5,7 +5,6 @@ Created by Rachel Boeke (boeker@umich.edu) for EECS 398 at the University of Mic
 ## Introduction
 **When will your next power outage be?** \
 **How can we predict a power outage and its impact before it happens?**\
-**Examining some of the factors that play a role is one place to start.**\
 \
 Using [power outage data provided by researchers at Purdue University](https://www.sciencedirect.com/science/article/pii/S2352340918307182#bib6), I wanted to answer the question:
 * What are the factors that indicate a severe power outage may occur?
@@ -275,7 +274,7 @@ PCT_LAND looked like a polynomial.
 Following this analysis, I added a QuantileTransformer to all quantitative columns, a 1/x FunctionTransformer to PCT_WATER_TOT, and a PolynomialFeatures transformer to PCT_LAND.
 I kept the OneHotEncoder used for U.S._STATES.
 
-I used GridSearchCV to tune hyperparameters polynomial degree and number of quantiles. This would be more efficient than manually searching for the optimal hyperparameters.
+I used GridSearchCV to tune hyperparameters polynomial degree and number of quantiles. This was more efficient than manually searching for the optimal hyperparameters.
 
 Finally, I tested four different sklearn regression models: LinearRegression, Ridge, Lasso, and ElasticNet.
 
@@ -287,3 +286,6 @@ The results were:
 | Ridge            | 767545 |                4 |                             7 |
 | Lasso            | 946649 |                1 |                             4 |
 | ElasticNet       | 758063 |                1 |                             8 |
+
+The ElasticNet model performed the best with an MSE of 758,063, using an optimal degree of 1 and optimal number of quantiles 8. 
+All models except Lasso improved over the baseline model, but there is still room for improvement.
