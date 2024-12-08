@@ -1,10 +1,9 @@
-# Examining Power Outage Factors: When Will Your Next Power Outage Be?
+# Analyzing Power Outages
 
 Created by Rachel Boeke (boeker@umich.edu) for EECS 398 at the University of Michigan.
 
 ## Introduction
-**When will your next power outage be?** \
-**How can we predict a power outage and its impact before it happens?**\
+**How can we predict a power outage and its severity?**\
 \
 Using [power outage data provided by researchers at Purdue University](https://www.sciencedirect.com/science/article/pii/S2352340918307182#bib6), I wanted to answer the question:
 * What are the factors that indicate a severe power outage may occur?
