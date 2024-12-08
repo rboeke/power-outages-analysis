@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <title>Panel</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.holoviz.org/panel/1.5.4/dist/images/apple-touch-icon.png">
+ <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.holoviz.org/panel/1.5.4/dist/images/favicon.ico">     <style>
+      html, body {
+	display: flow-root;
+        box-sizing: border-box;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <link rel="stylesheet" href="https://cdn.holoviz.org/panel/1.5.4/dist/bundled/datatabulator/tabulator-tables@6.3.0/dist/css/tabulator_simple.min.css?v=1.5.4" type="text/css" />
+<script type="esms-options">{"shimMode": true}</script>
+
+<script type="text/javascript" src="https://cdn.holoviz.org/panel/1.5.4/dist/bundled/reactiveesm/es-module-shims@^1.10.0/dist/es-module-shims.min.js"></script>
+<script type="text/javascript" src="https://cdn.holoviz.org/panel/1.5.4/dist/bundled/datatabulator/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
+<script type="text/javascript" src="https://cdn.holoviz.org/panel/1.5.4/dist/bundled/datatabulator/luxon/build/global/luxon.min.js"></script>
+<script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-3.6.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-3.6.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.6.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-3.6.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.holoviz.org/panel/1.5.4/dist/panel.min.js"></script>
+
+<script type="text/javascript">
+  Bokeh.set_log_level("info");
+</script>  </head>
+  <body>
+    <div id="dfd51cc5-1900-46f7-9053-be443c97e5e9" data-root-id="p1064" style="display: contents;"></div>
+  
+    <script type="application/json" id="b7a48e20-e9a1-4f6b-98f2-58250020d902">
+      {"b5eda2fc-2d20-4b05-909a-3a99c05afec0":{"version":"3.6.1","title":"Bokeh Application","roots":[{"type":"object","name":"panel.models.tabulator.DataTabulator","id":"p1064","attributes":{"subscribed_events":{"type":"set","entries":["selection-change","cell-click","table-edit"]},"stylesheets":["\n:host(.pn-loading):before, .pn-loading:before {\n  background-color: #c3c3c3;\n  mask-size: auto calc(min(50%, 400px));\n  -webkit-mask-size: auto calc(min(50%, 400px));\n}",{"type":"object","name":"ImportedStyleSheet","id":"p1038","attributes":{"url":"https://cdn.holoviz.org/panel/1.5.4/dist/css/loading.css"}},{"type":"object","name":"ImportedStyleSheet","id":"p1039","attributes":{"url":"https://cdn.holoviz.org/panel/1.5.4/dist/bundled/font-awesome/css/all.min.css"}},{"type":"object","name":"ImportedStyleSheet","id":"p1035","attributes":{"url":"https://cdn.holoviz.org/panel/1.5.4/dist/bundled/theme/default.css"}},{"type":"object","name":"ImportedStyleSheet","id":"p1036","attributes":{"url":"https://cdn.holoviz.org/panel/1.5.4/dist/bundled/theme/native.css"}},{"type":"object","name":"ImportedStyleSheet","id":"p1037","attributes":{"url":"https://cdn.holoviz.org/panel/1.5.4/dist/bundled/datatabulator/tabulator-tables@6.3.0/dist/css/tabulator_simple.min.css"}}],"margin":[5,10],"align":"start","configuration":{"type":"map","entries":[["selectable",true],["columns",[{"type":"map","entries":[["field","index"]]},{"type":"map","entries":[["field","DEMAND.LOSS.MW"],["sorter","number"]]},{"type":"map","entries":[["field","OUTAGE.DURATION"],["sorter","number"]]},{"type":"map","entries":[["field","PERCENT.POP.IMPACTED"],["sorter","number"]]}]],["dataTree",false]]},"columns":[{"type":"object","name":"TableColumn","id":"p1043","attributes":{"field":"index","title":"index","width":0,"formatter":{"type":"object","name":"StringFormatter","id":"p1042","attributes":{"null_format":""}},"editor":{"type":"object","name":"CellEditor","id":"p1041"}}},{"type":"object","name":"TableColumn","id":"p1048","attributes":{"field":"DEMAND.LOSS.MW","title":"DEMAND.LOSS.MW","width":0,"formatter":{"type":"object","name":"NumberFormatter","id":"p1047","attributes":{"text_align":{"type":"value","value":"right"},"format":"0,0.0[00000]"}},"editor":{"type":"object","name":"NumberEditor","id":"p1046"}}},{"type":"object","name":"TableColumn","id":"p1053","attributes":{"field":"OUTAGE.DURATION","title":"OUTAGE.DURATION","width":0,"formatter":{"type":"object","name":"NumberFormatter","id":"p1052","attributes":{"text_align":{"type":"value","value":"right"},"format":"0,0.0[00000]"}},"editor":{"type":"object","name":"NumberEditor","id":"p1051"}}},{"type":"object","name":"TableColumn","id":"p1058","attributes":{"field":"PERCENT.POP.IMPACTED","title":"PERCENT.POP.IMPACTED","width":0,"formatter":{"type":"object","name":"NumberFormatter","id":"p1057","attributes":{"text_align":{"type":"value","value":"right"},"format":"0,0.0[00000]"}},"editor":{"type":"object","name":"NumberEditor","id":"p1056"}}}],"indexes":["index"],"layout":"fit_data_table","source":{"type":"object","name":"ColumnDataSource","id":"p1061","attributes":{"selected":{"type":"object","name":"Selection","id":"p1062","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1063"},"data":{"type":"map","entries":[["index",{"type":"ndarray","array":["mean","District of Columbia","West Virginia","Hawaii","New Mexico","Oklahoma","South Carolina","North Dakota","Nebraska","Iowa","Kansas"],"shape":[11],"dtype":"object","order":"little"}],["DEMAND.LOSS.MW",{"type":"ndarray","array":{"type":"bytes","data":"zczMzMy4e0AAAAAAAACUQAAAAAAA4IVAAAAAAADAgEAfhetRuKp1QBSuR+F6pGhApHA9CteOmkAAAAAAAGBjQB+F61G4yn5AAAAAAAAYdUAAAAAAAOBlQA=="},"shape":[11],"dtype":"float64","order":"little"}],["OUTAGE.DURATION",{"type":"ndarray","array":{"type":"bytes","data":"H4XrUTjxokBcj8L1qIalQAAAAAAAtMJAMzMzMzNrikDD9Shcj8pjQB+F61G4L6hAH4XrUbhLqUAAAAAAAICGQFyPwvWoKqlAAAAAAADfp0AAAAAAgIC8QA=="},"shape":[11],"dtype":"float64","order":"little"}],["PERCENT.POP.IMPACTED",{"type":"ndarray","array":{"type":"bytes","data":"16NwPQrX9z+F61G4HgU7QI/C9ShcjyxAPQrXo3A9JkDNzMzMzEwiQK5H4XoUriBAPQrXo3A9GEAfhetRuB4UQKRwPQrXoxNACtejcD0KCUApXI/C9SgGQA=="},"shape":[11],"dtype":"float64","order":"little"}]]}}},"cell_styles":{"type":"map","entries":[["id","fb0d5df833df412c97c2488bc7533a0c"],["data",{"type":"map","entries":[[0,{"type":"map","entries":[[2,[["background-color","#FFF59D"]]],[3,[["background-color","#FFF59D"]]],[4,[["background-color","#FFF59D"]]]]}],[1,{"type":"map","entries":[[2,[["background-color",""]]],[3,[["background-color",""]]],[4,[["background-color",""]]]]}],[2,{"type":"map","entries":[[2,[["background-color",""]]],[3,[["background-color",""]]],[4,[["background-color",""]]]]}],[3,{"type":"map","entries":[[2,[["background-color",""]]],[3,[["background-color",""]]],[4,[["background-color",""]]]]}],[4,{"type":"map","entries":[[2,[["background-color",""]]],[3,[["background-color",""]]],[4,[["background-color",""]]]]}],[5,{"type":"map","entries":[[2,[["background-color",""]]],[3,[["background-color",""]]],[4,[["background-color",""]]]]}],[6,{"type":"map","entries":[[2,[["background-color",""]]],[3,[["background-color",""]]],[4,[["background-color",""]]]]}],[7,{"type":"map","entries":[[2,[["background-color",""]]],[3,[["background-color",""]]],[4,[["background-color",""]]]]}],[8,{"type":"map","entries":[[2,[["background-color",""]]],[3,[["background-color",""]]],[4,[["background-color",""]]]]}],[9,{"type":"map","entries":[[2,[["background-color",""]]],[3,[["background-color",""]]],[4,[["background-color",""]]]]}],[10,{"type":"map","entries":[[2,[["background-color",""]]],[3,[["background-color",""]]],[4,[["background-color",""]]]]}]]}]]},"page":1,"select_mode":true,"selectable_rows":null}}],"defs":[{"type":"model","name":"ReactiveHTML1"},{"type":"model","name":"FlexBox1","properties":[{"name":"align_content","kind":"Any","default":"flex-start"},{"name":"align_items","kind":"Any","default":"flex-start"},{"name":"flex_direction","kind":"Any","default":"row"},{"name":"flex_wrap","kind":"Any","default":"wrap"},{"name":"gap","kind":"Any","default":""},{"name":"justify_content","kind":"Any","default":"flex-start"}]},{"type":"model","name":"FloatPanel1","properties":[{"name":"config","kind":"Any","default":{"type":"map"}},{"name":"contained","kind":"Any","default":true},{"name":"position","kind":"Any","default":"right-top"},{"name":"offsetx","kind":"Any","default":null},{"name":"offsety","kind":"Any","default":null},{"name":"theme","kind":"Any","default":"primary"},{"name":"status","kind":"Any","default":"normalized"}]},{"type":"model","name":"GridStack1","properties":[{"name":"mode","kind":"Any","default":"warn"},{"name":"ncols","kind":"Any","default":null},{"name":"nrows","kind":"Any","default":null},{"name":"allow_resize","kind":"Any","default":true},{"name":"allow_drag","kind":"Any","default":true},{"name":"state","kind":"Any","default":[]}]},{"type":"model","name":"drag1","properties":[{"name":"slider_width","kind":"Any","default":5},{"name":"slider_color","kind":"Any","default":"black"},{"name":"value","kind":"Any","default":50}]},{"type":"model","name":"click1","properties":[{"name":"terminal_output","kind":"Any","default":""},{"name":"debug_name","kind":"Any","default":""},{"name":"clears","kind":"Any","default":0}]},{"type":"model","name":"FastWrapper1","properties":[{"name":"object","kind":"Any","default":null},{"name":"style","kind":"Any","default":null}]},{"type":"model","name":"NotificationAreaBase1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0}]},{"type":"model","name":"NotificationArea1","properties":[{"name":"js_events","kind":"Any","default":{"type":"map"}},{"name":"notifications","kind":"Any","default":[]},{"name":"position","kind":"Any","default":"bottom-right"},{"name":"_clear","kind":"Any","default":0},{"name":"types","kind":"Any","default":[{"type":"map","entries":[["type","warning"],["background","#ffc107"],["icon",{"type":"map","entries":[["className","fas fa-exclamation-triangle"],["tagName","i"],["color","white"]]}]]},{"type":"map","entries":[["type","info"],["background","#007bff"],["icon",{"type":"map","entries":[["className","fas fa-info-circle"],["tagName","i"],["color","white"]]}]]}]}]},{"type":"model","name":"Notification","properties":[{"name":"background","kind":"Any","default":null},{"name":"duration","kind":"Any","default":3000},{"name":"icon","kind":"Any","default":null},{"name":"message","kind":"Any","default":""},{"name":"notification_type","kind":"Any","default":null},{"name":"_destroyed","kind":"Any","default":false}]},{"type":"model","name":"TemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"BootstrapTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"TemplateEditor1","properties":[{"name":"layout","kind":"Any","default":[]}]},{"type":"model","name":"MaterialTemplateActions1","properties":[{"name":"open_modal","kind":"Any","default":0},{"name":"close_modal","kind":"Any","default":0}]},{"type":"model","name":"ReactiveESM1","properties":[{"name":"esm_constants","kind":"Any","default":{"type":"map"}}]},{"type":"model","name":"JSComponent1","properties":[{"name":"esm_constants","kind":"Any","default":{"type":"map"}}]},{"type":"model","name":"ReactComponent1","properties":[{"name":"esm_constants","kind":"Any","default":{"type":"map"}}]},{"type":"model","name":"AnyWidgetComponent1","properties":[{"name":"esm_constants","kind":"Any","default":{"type":"map"}}]},{"type":"model","name":"request_value1","properties":[{"name":"fill","kind":"Any","default":"none"},{"name":"_synced","kind":"Any","default":null},{"name":"_request_sync","kind":"Any","default":0}]}]}}
+    </script>
+    <script type="text/javascript">
+      (function() {
+        const fn = function() {
+          Bokeh.safely(function() {
+            (function(root) {
+              function embed_document(root) {
+              const docs_json = document.getElementById('b7a48e20-e9a1-4f6b-98f2-58250020d902').textContent;
+              const render_items = [{"docid":"b5eda2fc-2d20-4b05-909a-3a99c05afec0","roots":{"p1064":"dfd51cc5-1900-46f7-9053-be443c97e5e9"},"root_ids":["p1064"]}];
+              root.Bokeh.embed.embed_items(docs_json, render_items);
+              }
+              if (root.Bokeh !== undefined) {
+                embed_document(root);
+              } else {
+                let attempts = 0;
+                const timer = setInterval(function(root) {
+                  if (root.Bokeh !== undefined) {
+                    clearInterval(timer);
+                    embed_document(root);
+                  } else {
+                    attempts++;
+                    if (attempts > 100) {
+                      clearInterval(timer);
+                      console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                    }
+                  }
+                }, 10, root)
+              }
+            })(window);
+          });
+        };
+        if (document.readyState != "loading") fn();
+      else document.addEventListener("DOMContentLoaded", fn, {once: true});
+      })();
+    </script>
+  </body>
+</html>
