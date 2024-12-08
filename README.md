@@ -151,9 +151,8 @@ decided to examine the causes of outages over the years:
 ></iframe>
 
 ### Imputation
-I decided not to fill in any missing values for two reasons:
-1. There wasn't much missing data, so missing values did not impact analysis much.
-2. I didn't think I could fill in missing values without creating artificial relationships between variables.
+I decided not to fill in any missing values mainly because there wasn't much missing data, so missing values did not impact analysis much.
+The two columns with the most missing data were measures of outage severity, DEMAND.LOSS.MW and CUSTOMERS.AFFECTED.
 
 A summary of missing values across all columns of the dataset is below:
 
