@@ -238,4 +238,32 @@ It appears most of the predicted data points fall within ~10MW of the actual dem
 
 ## Final Model
 
+I used the following plots to determine which features might be valuable to add to the model:
 
+<iframe
+  src="plots/distr_ANOMALY_LEVEL.html"
+  width="800"
+  height="400"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="plots/distr_AREAPCT_URBAN.html"
+  width="800"
+  height="400"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="plots/distr_PCT_LAND.html"
+  width="800"
+  height="400"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="plots/distr_PCT_WATER_TOT.html"
+  width="800"
+  height="400"
+  frameborder="0"
+></iframe>
