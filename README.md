@@ -267,3 +267,23 @@ I used the following plots to determine which features might be valuable to add 
   height="400"
   frameborder="0"
 ></iframe>
+
+Each of these plots looked like it might fit a normal distribution.
+PCT_WATER_TOT looked like it might fit 1/x.
+PCT_LAND looked like a polynomial.
+
+Following this analysis, I added a QuantileTransformer to all quantitative columns, a 1/x FunctionTransformer to PCT_WATER_TOT, and a PolynomialFeatures transformer to PCT_LAND.
+I kept the OneHotEncoder used for U.S._STATES.
+
+I used GridSearchCV to tune hyperparameters polynomial degree and number of quantiles. This would be more efficient than manually searching for the optimal hyperparameters.
+
+Finally, I tested four different sklearn regression models: LinearRegression, Ridge, Lasso, and ElasticNet.
+
+The results were:
+
+| Model            |    MSE |   Optimal Degree |   Optimal Number of Quantiles |
+|:-----------------|-------:|-----------------:|------------------------------:|
+| LinearRegression | 767545 |                4 |                             1 |
+| Ridge            | 767545 |                4 |                             7 |
+| Lasso            | 946649 |                1 |                             4 |
+| ElasticNet       | 758063 |                1 |                             8 |
