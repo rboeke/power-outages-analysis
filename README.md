@@ -149,8 +149,39 @@ decided to examine the causes of outages over the years:
 ></iframe>
 
 ### Imputation
+I decided not to fill in any missing values for two reasons:
+1. There wasn't much missing data, so missing values did not impact analysis much.
+2. I didn't think I could fill in missing values without creating artificial relationships between variables.
 
-
+A summary of missing values across all columns of the dataset is below:
+|                    | Percent Data Missing   |
+|:-------------------|:-----------------------|
+| U.S._STATE         | 0.0 %                  |
+| POSTAL.CODE        | 0.0 %                  |
+| NERC.REGION        | 0.0 %                  |
+| MONTH              | 0.59 %                 |
+| OUTAGE.START       | 0.59 %                 |
+| CLIMATE.REGION     | 0.39 %                 |
+| ANOMALY.LEVEL      | 0.59 %                 |
+| CLIMATE.CATEGORY   | 0.59 %                 |
+| PCT_LAND           | 0.0 %                  |
+| AREAPCT_URBAN      | 0.0 %                  |
+| PCT_WATER_TOT      | 0.0 %                  |
+| RES.PRICE          | 1.43 %                 |
+| COM.PRICE          | 1.43 %                 |
+| IND.PRICE          | 1.43 %                 |
+| TOTAL.PRICE        | 1.43 %                 |
+| RES.SALES          | 1.43 %                 |
+| COM.SALES          | 1.43 %                 |
+| IND.SALES          | 1.43 %                 |
+| TOTAL.SALES        | 1.43 %                 |
+| OUTAGE.DURATION    | 3.78 %                 |
+| DEMAND.LOSS.MW     | 45.96 %                |
+| CUSTOMERS.AFFECTED | 28.88 %                |
+| POPULATION         | 0.0 %                  |
+| TOTAL.CUSTOMERS    | 0.0 %                  |
+| YEAR               | 0.0 %                  |
+| CAUSE.CATEGORY     | 0.0 %                  |
 
 ## Framing a Prediction Problem
 
