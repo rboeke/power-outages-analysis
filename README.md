@@ -4,10 +4,8 @@ Created by Rachel Boeke (boeker@umich.edu) for EECS 398 at the University of Mic
 
 ## Introduction
 **When will your next power outage be?** \
-\
-**How can we predict (or even prevent) a power outage and its impact before it happens?**\
-\
-**Examining some of the factors that play a role is one place to start...**\
+**How can we predict a power outage and its impact before it happens?**\
+**Examining some of the factors that play a role is one place to start.**\
 \
 Using [power outage data provided by researchers at Purdue University](https://www.sciencedirect.com/science/article/pii/S2352340918307182#bib6), I wanted to answer the question:
 * What are the factors that indicate a severe power outage may occur?
@@ -22,30 +20,30 @@ Using [power outage data provided by researchers at Purdue University](https://w
 * U.S._STATE: The U.S. state where the outage occurred
 * POSTAL.CODE: The two-letter postal abbreviation for the U.S. state where the outage occurred
 * NERC.REGION: The North American Electric Reliability Corporation (NERC) regions involved in the outage event
-\
+
 2. Time:
 * OUTAGE.START.DATE: This variable indicates the day of the year when the outage event started (as reported by the corresponding Utility in the region)
 * OUTAGE.START.TIME: This variable indicates the time of the day when the outage event started (as reported by the corresponding Utility in the region)
-\
+
 3. Climate:
 * CLIMATE.REGION: U.S. Climate regions as specified by National Centers for Environmental Information (nine climatically consistent regions in continental U.S.A.)
 * ANOMALY.LEVEL: This represents the oceanic El Niño/La Niña (ONI) index referring to the cold and warm episodes by season. It is estimated as a 3-month running mean of ERSST.v4 SST anomalies in the Niño 3.4 region (5°N to 5°S, 120–170°W)
 * CLIMATE.CATEGORY: This represents the climate episodes corresponding to the years. The categories—“Warm”, “Cold” or “Normal” episodes of the climate are based on a threshold of ± 0.5 °C for the Oceanic Niño Index (ONI)
-\
+
 4. Land-use characteristics
 * PCT_LAND: Percentage of land area in the U.S. state as compared to the overall land area in the continental U.S. (in %)
 * AREAPCT_URBAN: Percentage of the land area of the U.S. state represented by the land area of the urban areas (in %)
 * PCT_WATER_TOT: Percentage of water area in the U.S. state as compared to the overall water area in the continental U.S. (in %)
-\
+
 5. Population:
 * POPULATION: Population in the U.S. state in a year
 * TOTAL.CUSTOMERS: Annual number of total customers served in the U.S. state
 
 ### Relevant columns that characterize the severity of an outage include:
 1. OUTAGE.DURATION: Duration of outage events (in minutes)
-\
+
 2. DEMAND.LOSS.MW: Amount of peak demand lost during an outage event (in Megawatt) [but in many cases, total demand is reported]
-\
+
 3. CUSTOMERS.AFFECTED: Number of customers affected by the power outage event
 
 Additional fields and field descriptions are provided [here](https://www.sciencedirect.com/science/article/pii/S2352340918307182#bib6).
@@ -74,16 +72,16 @@ The first 10 rows of the cleaned data are shown below:
 
 I looked at the distribution of relevant variables. To start, I examined the severity metrics DEMAND.LOSS.MW, OUTAGE.DURATION, and CUSTOMERS.AFFECTED to see what might be considered a "severe" outage:
 
-|   Customers Affected (Thousands) |   Outage Duration (Hours) |   Demand Loss (MW) |
-|---------------------------------:|--------------------------:|-------------------:|
-|                         1091     |                1476       |            829     |
-|                          143.456 |                  43.7566  |            536.287 |
-|                          286.986 |                  99.0414  |           2196.45  |
-|                            0     |                   0       |              0     |
-|                            9.65  |                   1.70417 |              3     |
-|                           70.135 |                  11.6833  |            168     |
-|                          150     |                  48       |            400     |
-|                         3241.44  |                1810.88    |          41788     |
+|       |   Customers Affected (Thousands) |   Outage Duration (Hours) |   Demand Loss (MW) |
+|:------|---------------------------------:|--------------------------:|-------------------:|
+| count |                         1091     |                1476       |            829     |
+| mean  |                          143.456 |                  43.7566  |            536.287 |
+| std   |                          286.986 |                  99.0414  |           2196.45  |
+| min   |                            0     |                   0       |              0     |
+| 25%   |                            9.65  |                   1.70417 |              3     |
+| 50%   |                           70.135 |                  11.6833  |            168     |
+| 75%   |                          150     |                  48       |            400     |
+| max   |                         3241.44  |                1810.88    |          41788     |
 
 <iframe
   src="plots/distr_severity_measures.html"
@@ -124,7 +122,7 @@ Second, I looked at mean climate anomaly levels across states during outages:
   height="600"
   frameborder="0"
 ></iframe>
-Mean anomaly level appears to vary more across states than across regions - when predicting possibly of an outage in a given state, it may be better to look at anomaly levels at the state level rather than the regional level.
+Mean anomaly level appears to vary more across states than across regions - when predicting possibility of an outage in a given state, it may be better to look at anomaly levels at the state level rather than the regional level.
 
 ### Interesting Aggregates
 
@@ -161,7 +159,8 @@ I decided not to fill in any missing values for two reasons:
 2. I didn't think I could fill in missing values without creating artificial relationships between variables.
 
 A summary of missing values across all columns of the dataset is below:
-|                    | Percent Data Missing   |
+
+| Column             | Percent Data Missing   |
 |:-------------------|:-----------------------|
 | U.S._STATE         | 0.0 %                  |
 | POSTAL.CODE        | 0.0 %                  |
